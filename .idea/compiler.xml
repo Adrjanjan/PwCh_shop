@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="basket" target="17" />
+      <module name="basket.main" target="17" />
+      <module name="basket.test" target="17" />
+      <module name="currency" target="17" />
+      <module name="currency.main" target="17" />
+      <module name="currency.test" target="17" />
+      <module name="notification" target="17" />
+      <module name="notification.main" target="17" />
+      <module name="notification.test" target="17" />
+      <module name="order" target="17" />
+      <module name="order.main" target="17" />
+      <module name="order.test" target="17" />
+      <module name="payment" target="17" />
+      <module name="payment.main" target="17" />
+      <module name="payment.test" target="17" />
+      <module name="pl.edu.agh.pwch.shop.product-catalog.main" target="17" />
+      <module name="pl.edu.agh.pwch.shop.product-catalog.test" target="17" />
+      <module name="product-catalog" target="17" />
+      <module name="product-catalog.main" target="17" />
+      <module name="product-catalog.test" target="17" />
+      <module name="shipment" target="18" />
+      <module name="shipment.main" target="18" />
+      <module name="shipment.test" target="18" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

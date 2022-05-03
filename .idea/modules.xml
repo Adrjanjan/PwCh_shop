@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/PwCh_shop.iml" filepath="$PROJECT_DIR$/.idea/PwCh_shop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/basket.iml" filepath="$PROJECT_DIR$/.idea/modules/basket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/basket.main.iml" filepath="$PROJECT_DIR$/.idea/modules/basket.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/basket.test.iml" filepath="$PROJECT_DIR$/.idea/modules/basket.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/currency/currency.iml" filepath="$PROJECT_DIR$/currency/currency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/currency.main.iml" filepath="$PROJECT_DIR$/.idea/modules/currency.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/currency.test.iml" filepath="$PROJECT_DIR$/.idea/modules/currency.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notification/notification.iml" filepath="$PROJECT_DIR$/notification/notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/notification.main.iml" filepath="$PROJECT_DIR$/.idea/modules/notification.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/notification.test.iml" filepath="$PROJECT_DIR$/.idea/modules/notification.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/order.main.iml" filepath="$PROJECT_DIR$/.idea/modules/order.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/order.test.iml" filepath="$PROJECT_DIR$/.idea/modules/order.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment/payment.iml" filepath="$PROJECT_DIR$/payment/payment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/payment.main.iml" filepath="$PROJECT_DIR$/.idea/modules/payment.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/payment.test.iml" filepath="$PROJECT_DIR$/.idea/modules/payment.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product-catalog/product-catalog.iml" filepath="$PROJECT_DIR$/product-catalog/product-catalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-catalog.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-catalog.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-catalog.test.iml" filepath="$PROJECT_DIR$/.idea/modules/product-catalog.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shipment/shipment.iml" filepath="$PROJECT_DIR$/shipment/shipment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shipment.main.iml" filepath="$PROJECT_DIR$/.idea/modules/shipment.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shipment.test.iml" filepath="$PROJECT_DIR$/.idea/modules/shipment.test.iml" />
+    </modules>
+  </component>
+</project>
