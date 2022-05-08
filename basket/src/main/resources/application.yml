@@ -1,0 +1,4 @@
+server:
+  port: ${8080:PORT}
+  redis:
+    host: ${REDIS_ADDRESS:10.12.1.19}
