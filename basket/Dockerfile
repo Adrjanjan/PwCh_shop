@@ -14,4 +14,4 @@ RUN mkdir /app
 
 COPY --from=build /home/gradle/src/build/libs/basket-0.0.1-SNAPSHOT.jar /app/basket.jar
 
-ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-jar","/app/basket.jar"]
+ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-jar","/app/basket.jar"]

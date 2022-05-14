@@ -32,14 +32,14 @@ spec:
             httpGet:
               path: /actuator/health/readiness
               port: 8085
-              initialDelaySeconds: 3
-              periodSeconds: 3
+            initialDelaySeconds: 3
+            periodSeconds: 3
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
               port: 8085
-              initialDelaySeconds: 3
-              periodSeconds: 3
+            initialDelaySeconds: 3
+            periodSeconds: 3
 
 ---
 apiVersion: v1
@@ -51,6 +51,6 @@ spec:
   selector:
     app: product-catalog
   ports:
-    - name: product_catalog_api_port
+    - name: product-catalog-api-port
       port: 8085
       targetPort: 8085

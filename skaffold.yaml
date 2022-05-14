@@ -1,0 +1,63 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+build:
+  local:
+    concurrency: 0
+requires:
+  - path: ./basket
+#  - path: ./currency
+#  - path: ./notification
+#  - path: ./order
+#  - path: ./payment
+#  - path: ./product-catalog
+#  - path: ./shipment
+
+
+
+
+
+
+
+
+#metadata:
+#  name: app
+#build:
+#  artifacts:
+#    - image: basket
+#      context: ./basket
+#      docker:
+#        dockerfile: Dockerfile
+#    - image: currency
+#      context: ./currency
+#    - image: notification
+#      context: ./notification
+#     - image: order
+#     context: ./order
+#     - image: payment
+#     context: ./payment
+#    - image: product-catalog
+#      context: ./product-catalog
+#    - image: shipment
+#      context: ./shipment
+#
+##    - image: frontend
+##      context: ./frontend
+#  tagPolicy:
+#    gitCommit: {}
+#  local:
+#    useBuildkit: false
+#deploy:
+#  kubectl:
+#    manifests:
+#      - ./kubernetes/basket.yml
+#      - ./kubernetes/currency.yaml
+#      - ./kubernetes/notification.yaml
+#      - ./kubernetes/order.yaml
+#      - ./kubernetes/payment.yaml
+#      - ./kubernetes/product-catalog.yaml
+#      - ./kubernetes/shipment.yaml
+##      - ./kubernetes/frontend.yml
+#profiles:
+#  - name: default
+#
+    europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository

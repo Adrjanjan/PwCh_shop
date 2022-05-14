@@ -1,57 +1,56 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: basket
+  name: order
 spec:
   selector:
     matchLabels:
-      app: basket
+      app: order
   template:
     metadata:
       labels:
-        app: basket
+        app: order
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
         - name: server
-          image: basket
+          image: order
           ports:
-            - containerPort: 8080
+            - containerPort: 8083
           env:
-            - name: REDIS_ADDRESS
-              value: "10.12.1.19"
             - name: PORT
-              value: "8080"
+              value: "8083"
           resources:
             requests:
-              cpu: 200m
+              cpu: 100m
               memory: 64Mi
             limits:
-              cpu: 300m
+              cpu: 200m
               memory: 128Mi
           readinessProbe:
             httpGet:
               path: /actuator/health/readiness
-              port: 8080
-              initialDelaySeconds: 3
-              periodSeconds: 3
+              port: 8083
+            initialDelaySeconds: 3
+            periodSeconds: 3
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
-              port: 8080
-              initialDelaySeconds: 3
-              periodSeconds: 3
+              port: 8083
+            initialDelaySeconds: 3
+            periodSeconds: 3
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: basket
+  name: order
 spec:
   type: ClusterIP
   selector:
-    app: basket
+    app: order
   ports:
-    - name: basket_api_port
-      port: 8080
-      targetPort: 8080
+    - name: order-api-port
+      port: 8083
+      targetPort: 8083

@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: order
+  name: shipment
 spec:
   selector:
     matchLabels:
-      app: order
+      app: shipment
   template:
     metadata:
       labels:
-        app: order
+        app: shipment
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
         - name: server
-          image: order
+          image: shipment
           ports:
-            - containerPort: 8083
+            - containerPort: 8086
           env:
             - name: PORT
-              value: "8083"
+              value: "8086"
           resources:
             requests:
               cpu: 100m
@@ -31,26 +31,26 @@ spec:
           readinessProbe:
             httpGet:
               path: /actuator/health/readiness
-              port: 8083
-              initialDelaySeconds: 3
-              periodSeconds: 3
+              port: 8086
+            initialDelaySeconds: 3
+            periodSeconds: 3
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
-              port: 8083
-              initialDelaySeconds: 3
-              periodSeconds: 3
+              port: 8086
+            initialDelaySeconds: 3
+            periodSeconds: 3
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: order
+  name: shipment
 spec:
   type: ClusterIP
   selector:
-    app: order
+    app: shipment
   ports:
-    - name: order_api_port
-      port: 8083
-      targetPort: 8083
+    - name: shipment-api-port
+      port: 8086
+      targetPort: 8086
