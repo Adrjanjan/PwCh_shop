@@ -12,22 +12,47 @@ class BasketController {
     lateinit var basketService: BasketService
 
     @GetMapping
-    fun getItems(@RequestBody userId: UUID) = basketService.getBasket(userId)
+    fun getBasket(@RequestBody getBasketRequest: GetBasketRequest): BasketDto? =
+        basketService.getBasket(getBasketRequest.userId)
 
 
     @PostMapping
-    fun addItem(@RequestBody itemDto: ItemDto){
+    fun addItem(@RequestBody itemDto: AddItemRequest) {
         basketService.addItem(itemDto)
     }
 
     @DeleteMapping
-    fun deleteItem(@RequestBody itemDto: ItemDto) = basketService.deleteItem(itemDto)
+    fun deleteItem(@RequestBody itemDto: DeleteItemRequest) = basketService.deleteItem(itemDto)
 
+    @DeleteMapping("/all")
+    fun emptyBasket(@RequestBody emptyBasketRequest: EmptyBasketRequest) =
+        basketService.delete(emptyBasketRequest.userId)
 
 }
 
-data class ItemDto(
+data class BasketDto(
     val userId: UUID,
-    val itemId: UUID,
-    val itemQuantity: Int
+    val items: List<ItemDto>
+)
+
+data class ItemDto(
+    val productId: UUID,
+    val quantity: Int
+)
+
+data class AddItemRequest(
+    val userId: UUID,
+    val item: ItemDto
+)
+data class DeleteItemRequest(
+    val userId: UUID,
+    val item: ItemDto
+)
+
+data class EmptyBasketRequest(
+    val userId: UUID
+)
+
+data class GetBasketRequest(
+    val userId: UUID
 )
