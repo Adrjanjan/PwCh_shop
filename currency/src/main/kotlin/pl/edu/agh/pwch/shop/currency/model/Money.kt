@@ -1,5 +1,8 @@
 package pl.edu.agh.pwch.shop.currency.model
 
+import javax.persistence.Embeddable
+
+@Embeddable
 data class Money(
     val currencyCode: Currency,
     val units: Int,
