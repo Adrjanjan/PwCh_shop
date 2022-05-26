@@ -1,0 +1,6 @@
+shipping-service-address: ${"127.0.0.1:8081":SHIPPING_SERVICE_ADDR}
+product-catalog-service-address: ${127.0.0.1:PRODUCT_CATALOG_SERVICE_ADDR}
+basket-service-address: ${127.0.0.1:BASKET_SERVICE_ADDR}
+currency-service-address: ${127.0.0.1:CURRENCY_SERVICE_ADDR}
+notification-service-address: ${127.0.0.1:NOTIFICATION_SERVICE_ADDR}
+payment-service-address: ${127.0.0.1:PAYMENT_SERVICE_ADDR}

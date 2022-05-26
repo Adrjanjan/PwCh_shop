@@ -29,6 +29,7 @@
         <module>payment</module>
         <module>product-catalog</module>
         <module>shipment</module>
+        <module>shared-dto</module>
     </modules>
 
     <dependencyManagement>

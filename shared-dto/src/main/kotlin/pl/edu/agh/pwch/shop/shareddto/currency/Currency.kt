@@ -1,4 +1,4 @@
-package pl.edu.agh.pwch.shop.currency.model
+package pl.edu.agh.pwch.shop.shareddto.currency
 
 enum class Currency {
     USD,

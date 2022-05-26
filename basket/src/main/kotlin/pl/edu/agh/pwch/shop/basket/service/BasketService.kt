@@ -3,11 +3,11 @@ package pl.edu.agh.pwch.shop.basket.service
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import pl.edu.agh.pwch.shop.basket.controller.AddItemRequest
-import pl.edu.agh.pwch.shop.basket.controller.BasketDto
 import pl.edu.agh.pwch.shop.basket.controller.DeleteItemRequest
-import pl.edu.agh.pwch.shop.basket.controller.ItemDto
 import pl.edu.agh.pwch.shop.basket.model.Basket
 import pl.edu.agh.pwch.shop.basket.repository.BasketRepository
+import pl.edu.agh.pwch.shop.shareddto.basket.BasketDto
+import pl.edu.agh.pwch.shop.shareddto.basket.ItemDto
 import java.util.*
 
 @Service
@@ -16,21 +16,20 @@ class BasketService {
     @Autowired
     lateinit var basketRepository: BasketRepository
 
-    fun addItem(itemDto: AddItemRequest) = basketRepository.findById(itemDto.userId)
-        .ifPresentOrElse(
-            {
-                it!!.items.replace(itemDto.item.productId, itemDto.item.quantity)
-                basketRepository.save(it)
-            },
-            {
-                basketRepository.save(
-                    Basket(
-                        itemDto.userId,
-                        mutableMapOf(itemDto.item.productId to itemDto.item.quantity)
-                    )
+    fun addItem(itemDto: AddItemRequest): Basket {
+        val basket = basketRepository.findById(itemDto.userId)
+        return if (basket.isPresent) {
+            basket.get().items.replace(itemDto.item.productId, itemDto.item.quantity)
+            basketRepository.save(basket.get())
+        } else {
+            basketRepository.save(
+                Basket(
+                    itemDto.userId,
+                    mutableMapOf(itemDto.item.productId to itemDto.item.quantity)
                 )
-            }
-        )
+            )
+        }
+    }
 
     fun getBasket(userId: UUID): BasketDto? =
         basketRepository.findById(userId).orElseGet { null }

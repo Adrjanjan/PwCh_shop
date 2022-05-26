@@ -15,7 +15,7 @@ import org.springframework.messaging.Message
 import org.springframework.messaging.MessageChannel
 import org.springframework.messaging.MessageHandler
 import org.springframework.stereotype.Service
-import pl.edu.agh.pwch.notification.shared.model.EmailDto
+import pl.edu.agh.pwch.shop.shareddto.notification.EmailDto
 
 
 @Service

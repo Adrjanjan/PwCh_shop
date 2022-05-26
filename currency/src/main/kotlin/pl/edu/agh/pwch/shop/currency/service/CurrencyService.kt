@@ -2,9 +2,9 @@ package pl.edu.agh.pwch.shop.currency.service
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import pl.edu.agh.pwch.shop.currency.repository.CurrencyRepository
-import pl.edu.agh.pwch.shop.currency.model.Currency
 import pl.edu.agh.pwch.shop.currency.model.Money
+import pl.edu.agh.pwch.shop.currency.repository.CurrencyRepository
+import pl.edu.agh.pwch.shop.shareddto.currency.Currency
 import kotlin.math.floor
 import kotlin.math.pow
 import kotlin.math.round

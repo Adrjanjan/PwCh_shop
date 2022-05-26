@@ -9,8 +9,10 @@ import org.springframework.integration.annotation.MessagingGateway
 import org.springframework.integration.annotation.ServiceActivator
 import org.springframework.integration.channel.DirectChannel
 import org.springframework.messaging.MessageHandler
-import pl.edu.agh.pwch.notification.shared.model.EmailDto
+import org.springframework.stereotype.Component
+import pl.edu.agh.pwch.shop.shareddto.notification.EmailDto
 
+@Component
 class NotificationSender {
     @Bean
     fun pubSubOutputChannel() = DirectChannel()

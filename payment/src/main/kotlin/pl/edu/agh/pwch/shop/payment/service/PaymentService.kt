@@ -5,9 +5,9 @@ import org.apache.commons.logging.LogFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import pl.edu.agh.pwch.shop.payment.controller.ChargeRequest
-import pl.edu.agh.pwch.shop.payment.controller.CreditCardInfo
 import pl.edu.agh.pwch.shop.payment.repository.Transaction
 import pl.edu.agh.pwch.shop.payment.repository.TransactionRepository
+import pl.edu.agh.pwch.shop.shareddto.payment.CreditCardInfo
 import java.time.ZonedDateTime
 import java.util.*
 
@@ -18,7 +18,7 @@ class PaymentService {
     lateinit var transactionRepository: TransactionRepository
 
     fun createCharge(chargeRequest: ChargeRequest): UUID {
-        val card = chargeRequest.creditCard
+        val card = chargeRequest.paymentInfo
         val amount = chargeRequest.amount
         validateCard(card)
         LOGGER.info(
@@ -46,7 +46,6 @@ class PaymentService {
         private val LOGGER: Log = LogFactory.getLog(PaymentService::class.java)
     }
 }
-
 
 open class CreditCardException(message: String) : RuntimeException(message)
 

@@ -2,8 +2,10 @@ package pl.edu.agh.pwch.shop.order
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 @SpringBootApplication
+@EnableJpaRepositories
 class OrderApplication
 
 fun main(args: Array<String>) {

@@ -5,9 +5,11 @@ import com.google.cloud.spring.pubsub.support.converter.JacksonPubSubMessageConv
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 
 @SpringBootApplication
+@EnableJpaRepositories
 class NotificationApplication{
     @Bean
     fun jacksonPubSubMessageConverter(objectMapper: ObjectMapper): JacksonPubSubMessageConverter {

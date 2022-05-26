@@ -1,5 +1,6 @@
 package pl.edu.agh.pwch.shop.currency.model
 
+import pl.edu.agh.pwch.shop.shareddto.currency.Currency
 import javax.persistence.Embeddable
 
 @Embeddable
