@@ -1,7 +1,7 @@
 package pl.edu.agh.pwch.shop.currency.repository
 
 import org.springframework.stereotype.Service
-import pl.edu.agh.pwch.shop.currency.model.Currency
+import pl.edu.agh.pwch.shop.shareddto.currency.Currency
 
 @Service
 class CurrencyRepository {

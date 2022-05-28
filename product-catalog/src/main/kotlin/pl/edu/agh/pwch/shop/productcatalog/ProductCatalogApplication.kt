@@ -5,6 +5,7 @@ import org.springframework.boot.runApplication
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 @EnableJpaRepositories
+@SpringBootApplication
 class ProductCatalogApplication
 
 fun main(args: Array<String>) {

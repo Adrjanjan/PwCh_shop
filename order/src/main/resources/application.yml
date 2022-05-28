@@ -1,6 +1,6 @@
-shipping-service-address: ${"127.0.0.1:8081":SHIPPING_SERVICE_ADDR}
-product-catalog-service-address: ${127.0.0.1:PRODUCT_CATALOG_SERVICE_ADDR}
-basket-service-address: ${127.0.0.1:BASKET_SERVICE_ADDR}
-currency-service-address: ${127.0.0.1:CURRENCY_SERVICE_ADDR}
-notification-service-address: ${127.0.0.1:NOTIFICATION_SERVICE_ADDR}
-payment-service-address: ${127.0.0.1:PAYMENT_SERVICE_ADDR}
+basket-service-address: ${BASKET_SERVICE_ADDR:localhost}:8080
+currency-service-address: ${CURRENCY_SERVICE_ADDR:localhost}:8081
+notification-service-address: ${NOTIFICATION_SERVICE_ADDR:localhost}:8082
+payment-service-address: ${PAYMENT_SERVICE_ADDR:localhost}:8084
+product-catalog-service-address: ${PRODUCT_CATALOG_SERVICE_ADDR:localhost}:8085
+shipping-service-address: ${SHIPPING_SERVICE_ADDR:localhost}:8086

@@ -1,4 +1,6 @@
 server:
   port: ${PORT:8080}
+
+spring:
   redis:
     host: ${REDIS_ADDRESS:10.12.1.19}

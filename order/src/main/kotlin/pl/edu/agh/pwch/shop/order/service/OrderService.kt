@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestClientException
 import org.springframework.web.client.RestTemplate
-import pl.edu.agh.pwch.notification.shared.NotificationSender
-import pl.edu.agh.pwch.shop.order.controller.*
 import pl.edu.agh.pwch.shop.order.model.Order
 import pl.edu.agh.pwch.shop.order.model.User
 import pl.edu.agh.pwch.shop.order.repository.OrderRepository
@@ -151,7 +149,7 @@ class OrderService {
             UUID::class.java
         )
     } catch (e: RestClientException) {
-        LOGGER.error("[Charge Card] Can't charge card ending with [...${paymentInfo.cardNumber.substring(paymentInfo.cardNumber.length - 4)}]")
+        LOGGER.error("[Charge Card] Can't charge card ${paymentInfo.cardNumber}")
         throw e
     }
 

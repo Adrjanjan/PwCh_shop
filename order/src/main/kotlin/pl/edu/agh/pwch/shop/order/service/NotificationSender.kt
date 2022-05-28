@@ -1,4 +1,4 @@
-package pl.edu.agh.pwch.notification.shared
+package pl.edu.agh.pwch.shop.order.service
 
 import com.google.cloud.spring.pubsub.core.PubSubTemplate
 import com.google.cloud.spring.pubsub.integration.outbound.PubSubMessageHandler

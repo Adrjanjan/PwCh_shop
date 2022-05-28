@@ -10,7 +10,7 @@
     <artifactId>notification</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>notification</name>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <description>Notification module</description>
     <properties>
         <java.version>17</java.version>
@@ -18,10 +18,6 @@
         <spring-cloud-gcp.version>3.2.1</spring-cloud-gcp.version>
         <spring-cloud.version>2021.0.2</spring-cloud.version>
     </properties>
-
-    <modules>
-        <module>shared</module>
-    </modules>
 
     <dependencies>
         <dependency>

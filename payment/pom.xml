@@ -10,7 +10,7 @@
     <artifactId>payment</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>payment</name>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <description>Payment module</description>
     <properties>
         <java.version>17</java.version>
