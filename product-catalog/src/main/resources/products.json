@@ -1,0 +1,101 @@
+[
+  {
+    "id": "990d261c-6d0d-4ca2-969d-bb7d6e1b7fa4",
+    "name": "Piec do pizzy",
+    "description": "Dodaje trochę twojej ulubionej pizzy do twojego życia",
+    "picture": "/static/img/products/pizzaPiec.jpg",
+    "priceUsd": {
+      "currencyCode": "PLN",
+      "units": 600,
+      "nanos": 990000000
+    }
+  },
+  {
+    "id": "b8c0af51-ff53-4ae8-ac88-56b371dd3754",
+    "name": "Mąka do pizzy",
+    "description": "Bardzo dużo białka - robi wrazenie",
+    "picture": "/static/img/products/maka.jpg",
+    "priceUsd": {
+      "currencyCode": "PLN",
+      "units": 5,
+      "nanos": 990000000
+    }
+  },
+  {
+    "id": "ca73ad05-6a55-4f2b-b3e6-fcbca43d8fe8",
+    "name": "Zestaw moderski do pieca",
+    "description": "Żeby temperatura w środku wynosiła 500 stopni",
+    "picture": "/static/img/products/zestaw.jpg",
+    "priceUsd": {
+      "currencyCode": "PLN",
+      "units": 209,
+      "nanos": 990000000
+    }
+  },
+  {
+    "id": "88c74480-3d6a-4709-a427-b729a5d26b50",
+    "name": "Kamien do pizzy",
+    "description": "Żeby pizza była idealna",
+    "picture": "/static/img/products/kamien.jpg",
+    "priceUsd": {
+      "currencyCode": "PLN",
+      "units": 122,
+      "nanos": 900000000
+    }
+  },
+  {
+    "id": "f7bb4df5-c1d3-43fb-b181-8f0cc72c8b8b",
+    "name": "Wkrętarka",
+    "description": "Do wkręcania śrubek i denerwowania sąsiadów",
+    "picture": "/static/img/products/wkretarka.jpg",
+    "priceUsd": {
+      "currencyCode": "PLN",
+      "units": 524,
+      "nanos": 990000000
+    }
+  },
+  {
+    "id": "e5d31e0a-8a6c-46a1-9d6d-7759aed32bcb",
+    "name": "Sezam",
+    "description": "Do posypania chleba",
+    "picture": "/static/img/products/sezam.jpg",
+    "priceUsd": {
+      "currencyCode": "PLN",
+      "units": 90,
+      "nanos": 990000000
+    }
+  },
+  {
+    "id": "be02b1b3-0420-456f-97cf-d632c6da7cba",
+    "name": "Sprężarka",
+    "description": "Czasem się przydaje",
+    "picture": "/static/img/products/sprezarka.jpg",
+    "priceUsd": {
+      "currencyCode": "PLN",
+      "units": 618,
+      "nanos": 490000000
+    }
+  },
+  {
+    "id": "52c0700c-d15f-491e-9454-7a8e66450934",
+    "name": "Wege kiełbaski",
+    "description": "Dla wege ludzi",
+    "picture": "/static/img/products/wege.jpg",
+    "priceUsd": {
+      "currencyCode": "PLN",
+      "units": 214,
+      "nanos": 490000000
+    }
+  },
+  {
+    "id": "f3d6a0a4-ca6c-414a-9936-d14a7ad4b7fa",
+    "name": "Słoik",
+    "description": "Na zakwas",
+    "picture": "/static/img/products/sloik.jpg",
+    "priceUsd": {
+      "currencyCode": "PLN",
+      "units": 8,
+      "nanos": 990000000
+    }
+  }
+]

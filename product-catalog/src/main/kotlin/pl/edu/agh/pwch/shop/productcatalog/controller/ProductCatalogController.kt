@@ -22,8 +22,5 @@ class ProductCatalogController {
 
     @GetMapping("/{productId}/price")
     fun getProductPrice(@PathVariable productId: UUID): Money = productsRepository.findById(productId).get().priceUsd
-
-    @GetMapping("/search")
-    fun searchProducts(@RequestParam q: String) = productsRepository.findByNameLike(q)
 }
 

@@ -6,7 +6,4 @@ import pl.edu.agh.pwch.shop.productcatalog.Product
 import java.util.*
 
 @Repository
-interface ProductsRepository : JpaRepository<Product, UUID>{
-
-    fun findByNameLike(search: String) : List<Product>
-}
+interface ProductsRepository : JpaRepository<Product, UUID>
