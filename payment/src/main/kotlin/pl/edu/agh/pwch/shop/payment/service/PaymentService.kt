@@ -22,9 +22,7 @@ class PaymentService {
         val amount = chargeRequest.amount
         validateCard(card)
         LOGGER.info(
-            "Transaction processed: Take ${amount.currencyCode}${amount.units}.${amount.nanos} from card ending with ${
-                card.cardNumber.substring(card.cardNumber.length - 4)
-            }"
+            "[Create Charge] Transaction processed: Take ${amount.currencyCode} ${amount.units}.${amount.nanos} from card ${card.cardNumber}"
         )
         return transactionRepository.save(Transaction(UUID.randomUUID(), amount = amount, creditCardInfo = card)).id
     }

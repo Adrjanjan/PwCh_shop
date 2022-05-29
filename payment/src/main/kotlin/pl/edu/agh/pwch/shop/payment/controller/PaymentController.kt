@@ -2,6 +2,7 @@ package pl.edu.agh.pwch.shop.payment.controller
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import pl.edu.agh.pwch.shop.payment.service.PaymentService
@@ -15,7 +16,7 @@ class PaymentController {
     lateinit var paymentService: PaymentService
 
     @PostMapping("charge")
-    fun charge(chargeRequest: ChargeRequest) = paymentService.createCharge(chargeRequest)
+    fun charge(@RequestBody chargeRequest: ChargeRequest) = paymentService.createCharge(chargeRequest)
 }
 
 data class ChargeRequest(
