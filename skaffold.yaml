@@ -5,55 +5,9 @@ build:
     concurrency: 0
 requires:
   - path: ./basket
-#  - path: ./currency
-#  - path: ./notification
-#  - path: ./order
-#  - path: ./payment
-#  - path: ./product-catalog
-#  - path: ./shipment
-
-
-
-
-
-
-
-
-#metadata:
-#  name: app
-#build:
-#  artifacts:
-#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/basket
-#      context: ./basket
-#      docker:
-#        dockerfile: Dockerfile
-#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/currency
-#      context: ./currency
-#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/notification
-#      context: ./notification
-#     - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/order
-#     context: ./order
-#     - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/payment
-#     context: ./payment
-#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/product-catalog
-#      context: ./product-catalog
-#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/shipment
-#      context: ./shipment
-#  tagPolicy:
-#    gitCommit: {}
-#  local:
-#    useBuildkit: false
-#deploy:
-#  kubectl:
-#    manifests:
-#      - ./kubernetes/basket.yml
-#      - ./kubernetes/currency.yaml
-#      - ./kubernetes/notification.yaml
-#      - ./kubernetes/order.yaml
-#      - ./kubernetes/payment.yaml
-#      - ./kubernetes/product-catalog.yaml
-#      - ./kubernetes/shipment.yaml
-##      - ./kubernetes/frontend.yml
-#profiles:
-#  - name: default
-#
+  - path: ./currency
+  - path: ./notification
+  - path: ./order
+  - path: ./payment
+  - path: ./product-catalog
+  - path: ./shipment

@@ -1,17 +1,17 @@
 apiVersion: skaffold/v2beta28
 kind: Config
 metadata:
-  name: notification
+  name: product-catalog
 build:
   artifacts:
-  - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/notification
+  - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/product-catalog
     context: .
     docker:
       dockerfile: Dockerfile
 deploy:
   kubectl:
     manifests:
-    - ./kubernetes/notification.yaml
+    - ./kubernetes/product-catalog.yaml
 profiles:
 - name: cloudbuild
   build:
@@ -19,5 +19,5 @@ profiles:
 - name: dockerfile
   build:
     artifacts:
-    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/notification
+    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/product-catalog
       context: .

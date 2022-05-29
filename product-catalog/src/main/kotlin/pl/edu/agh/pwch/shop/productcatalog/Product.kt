@@ -13,5 +13,4 @@ class Product (
     val description: String,
     val picture: String,
     val priceUsd: Money,
-    val categories: List<String>,
 )
