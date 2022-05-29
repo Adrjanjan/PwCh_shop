@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
         - name: server
-          image: product-catalog
+          image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/product-catalog
           ports:
             - containerPort: 8085
           env:

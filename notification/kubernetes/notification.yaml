@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
         - name: server
-          image: notification
+          image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/notification
           ports:
             - containerPort: 8082
           env:

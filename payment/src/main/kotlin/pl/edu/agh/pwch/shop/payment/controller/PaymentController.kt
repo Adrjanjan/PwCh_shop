@@ -1,13 +1,15 @@
 package pl.edu.agh.pwch.shop.payment.controller
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 import pl.edu.agh.pwch.shop.payment.service.PaymentService
 import pl.edu.agh.pwch.shop.shareddto.payment.CreditCardInfo
 import pl.edu.agh.pwch.shop.shareddto.payment.Money
 
-@Controller("payment")
+@RestController
+@RequestMapping("/payment")
 class PaymentController {
     @Autowired
     lateinit var paymentService: PaymentService

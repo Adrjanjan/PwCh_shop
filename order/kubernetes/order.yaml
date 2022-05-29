@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
         - name: server
-          image: order
+          image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/order
           ports:
             - containerPort: 8083
           env:

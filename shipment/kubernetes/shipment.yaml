@@ -15,7 +15,8 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
         - name: server
-          image: shipment
+          image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/shipment
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8086
           env:

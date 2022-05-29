@@ -23,25 +23,22 @@ requires:
 #  name: app
 #build:
 #  artifacts:
-#    - image: basket
+#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/basket
 #      context: ./basket
 #      docker:
 #        dockerfile: Dockerfile
-#    - image: currency
+#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/currency
 #      context: ./currency
-#    - image: notification
+#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/notification
 #      context: ./notification
-#     - image: order
+#     - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/order
 #     context: ./order
-#     - image: payment
+#     - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/payment
 #     context: ./payment
-#    - image: product-catalog
+#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/product-catalog
 #      context: ./product-catalog
-#    - image: shipment
+#    - image: europe-central2-docker.pkg.dev/pwch-shop/pwch-shop-repository/shipment
 #      context: ./shipment
-#
-##    - image: frontend
-##      context: ./frontend
 #  tagPolicy:
 #    gitCommit: {}
 #  local:

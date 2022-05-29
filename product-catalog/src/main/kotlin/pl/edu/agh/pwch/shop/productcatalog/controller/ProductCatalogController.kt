@@ -1,16 +1,14 @@
 package pl.edu.agh.pwch.shop.productcatalog.controller
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.*
 import pl.edu.agh.pwch.shop.productcatalog.Product
 import pl.edu.agh.pwch.shop.productcatalog.repository.ProductsRepository
 import pl.edu.agh.pwch.shop.shareddto.payment.Money
 import java.util.*
 
-@Controller("/products")
+@RestController
+@RequestMapping("/products")
 class ProductCatalogController {
 
     @Autowired
