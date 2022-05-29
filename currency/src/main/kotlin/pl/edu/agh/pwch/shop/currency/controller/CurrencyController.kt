@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
-import pl.edu.agh.pwch.shop.currency.model.Money
 import pl.edu.agh.pwch.shop.currency.service.CurrencyService
 import pl.edu.agh.pwch.shop.shareddto.currency.Currency
+import pl.edu.agh.pwch.shop.shareddto.payment.Money
 
 @RestController("/currency")
 class CurrencyController {

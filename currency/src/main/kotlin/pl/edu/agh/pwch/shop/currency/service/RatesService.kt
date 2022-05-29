@@ -1,10 +1,10 @@
-package pl.edu.agh.pwch.shop.currency.repository
+package pl.edu.agh.pwch.shop.currency.service
 
 import org.springframework.stereotype.Service
 import pl.edu.agh.pwch.shop.shareddto.currency.Currency
 
 @Service
-class CurrencyRepository {
+class RatesService {
 
     var rates = mapOf(Currency.EUR to 1.0, Currency.USD to 1.03, Currency.PLN to 4.68)
 
@@ -18,6 +18,5 @@ class CurrencyRepository {
     private fun initRates() {
         TODO("Could be initialized using Europena Central Bank API")
     }
-
 
 }
