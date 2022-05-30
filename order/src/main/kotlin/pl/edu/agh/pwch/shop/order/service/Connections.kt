@@ -5,22 +5,22 @@ import org.springframework.stereotype.Component
 
 @Component
 class Connections {
-    @Value("#{shipping-service-address}")
+    @Value("\${shipping-service-address}")
     lateinit var SHIPPING_ADDRESS: String
 
-    @Value("#{basket-service-address}")
+    @Value("\${basket-service-address}")
     lateinit var BASKET_ADDRESS: String
 
-    @Value("#{product-catalog-service-address}")
+    @Value("\${product-catalog-service-address}")
     lateinit var CATALOG_ADDRESS: String
 
-    @Value("#{currency-service-address}")
+    @Value("\${currency-service-address}")
     lateinit var CURRENCY_ADDRESS: String
 
-    @Value("#{notification-service-address}")
+    @Value("\${notification-service-address}")
     lateinit var NOTIFICATION_ADDRESS: String
 
-    @Value("#{payment-service-address}")
+    @Value("\${payment-service-address}")
     lateinit var PAYMENT_ADDRESS: String
 
 }

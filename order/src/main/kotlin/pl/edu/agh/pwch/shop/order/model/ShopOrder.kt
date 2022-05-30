@@ -8,14 +8,13 @@ import javax.persistence.Id
 import javax.persistence.ManyToOne
 
 @Entity
-class Order(
+class ShopOrder(
     @Id
     val id: UUID,
 
     @ManyToOne
     val orderedBy: User,
 
-    @Column
     val amount: Money,
 
     @Column

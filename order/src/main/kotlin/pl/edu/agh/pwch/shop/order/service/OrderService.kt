@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestClientException
 import org.springframework.web.client.RestTemplate
-import pl.edu.agh.pwch.shop.order.model.Order
+import pl.edu.agh.pwch.shop.order.model.ShopOrder
 import pl.edu.agh.pwch.shop.order.model.User
 import pl.edu.agh.pwch.shop.order.repository.OrderRepository
+import pl.edu.agh.pwch.shop.order.repository.UserRepository
 import pl.edu.agh.pwch.shop.shareddto.basket.BasketDto
 import pl.edu.agh.pwch.shop.shareddto.basket.ItemDto
 import pl.edu.agh.pwch.shop.shareddto.currency.Currency
@@ -25,6 +26,9 @@ class OrderService {
     lateinit var orderRepository: OrderRepository
 
     @Autowired
+    lateinit var userRepository: UserRepository
+
+    @Autowired
     lateinit var restTemplate: RestTemplate
 
     @Autowired
@@ -38,6 +42,17 @@ class OrderService {
     }
 
     fun placeOrder(placeOrderRequest: PlaceOrderRequest): OrderResult {
+        if (!userRepository.existsById(placeOrderRequest.userId)) {
+            userRepository.save(
+                User(
+                    placeOrderRequest.userId,
+                    placeOrderRequest.userCurrency,
+                    placeOrderRequest.address,
+                    placeOrderRequest.email,
+                    placeOrderRequest.creditCard
+                )
+            )
+        }
         LOGGER.info("[PlaceOrder] user: ${placeOrderRequest.userId} currency: ${placeOrderRequest.userCurrency}")
 
         val orderPreparation = prepareOrderItemsAndShippingQuoteFromBasket(
@@ -51,15 +66,29 @@ class OrderService {
         }
 
         val transactionId = chargeCard(total, placeOrderRequest.creditCard)
-        LOGGER.info("payment went through (transactionId: $transactionId)", )
-        val shippingTrackingId = shipOrder(placeOrderRequest.userId, placeOrderRequest.address, orderPreparation.orderItems.map { it.basketItem })!!
-        emptyUserBasket(placeOrderRequest.userId)
+        LOGGER.info("payment went through (transactionId: $transactionId)")
+        val shippingTrackingId = shipOrder(
+            placeOrderRequest.userId,
+            placeOrderRequest.address,
+            orderPreparation.orderItems.map { it.basketItem })!!
+//        emptyUserBasket(placeOrderRequest.userId)
 
-        val order = Order(UUID.randomUUID(), User(placeOrderRequest.userId, placeOrderRequest.userCurrency, placeOrderRequest.address, placeOrderRequest.email, placeOrderRequest.creditCard), total, shippingTrackingId)
-        sendOrderConfirmation(placeOrderRequest.email, order)
-        orderRepository.save(order)
+        val shopOrder = ShopOrder(
+            UUID.randomUUID(),
+            User(
+                placeOrderRequest.userId,
+                placeOrderRequest.userCurrency,
+                placeOrderRequest.address,
+                placeOrderRequest.email,
+                placeOrderRequest.creditCard
+            ),
+            total,
+            shippingTrackingId
+        )
+//        sendOrderConfirmation(placeOrderRequest.email, order)
+        orderRepository.save(shopOrder)
         return OrderResult(
-            order.id,
+            shopOrder.id,
             shippingTrackingId,
             orderPreparation.shippingCostLocalized,
             placeOrderRequest.address,
@@ -74,7 +103,8 @@ class OrderService {
 
 
     fun prepareOrderItemsAndShippingQuoteFromBasket(userID: UUID, userCurrency: Currency, address: Address): OrderPrep {
-        val basketItems = getUserBasket(userID)!!
+//        val basketItems = getUserBasket(userID)!!
+        val basketItems = listOf(ItemDto(UUID.fromString("b8c0af51-ff53-4ae8-ac88-56b371dd3754"), 2))
         val orderItems = prepOrderItems(basketItems, userCurrency)
         val shippingUSD = quoteShipping(address, basketItems)!!
         val shippingPrice = convertCurrency(shippingUSD, userCurrency)!!
@@ -96,7 +126,7 @@ class OrderService {
     }
 
     fun getUserBasket(userId: UUID) = try { // GIT
-        restTemplate.getForObject("${conn.BASKET_ADDRESS}/${userId}", BasketDto::class.java)?.items
+        restTemplate.getForObject("${conn.BASKET_ADDRESS}/basket/${userId}", BasketDto::class.java)?.items
     } catch (e: RestClientException) {
         LOGGER.error("[User Basket] Can't get basket for user $userId")
         throw e
@@ -104,7 +134,7 @@ class OrderService {
 
     fun emptyUserBasket(userId: UUID) { // GIT
         try {
-            restTemplate.delete("${conn.BASKET_ADDRESS}/$userId")
+            restTemplate.delete("${conn.BASKET_ADDRESS}/basket/$userId")
         } catch (e: RestClientException) {
             LOGGER.error("[Empty Basket] Can't empty basket for user $userId")
             throw e
@@ -119,7 +149,7 @@ class OrderService {
 
 
     private fun getProductPrice(productId: UUID) = try { // GIT
-        restTemplate.getForObject("${conn.CATALOG_ADDRESS}/$productId/price", Money::class.java)
+        restTemplate.getForObject("${conn.CATALOG_ADDRESS}/products/$productId/price", Money::class.java)
     } catch (e: RestClientException) {
         LOGGER.error("[Get Product Price] Can't get price for product $productId")
         throw e
@@ -153,8 +183,15 @@ class OrderService {
         throw e
     }
 
-    fun sendOrderConfirmation(email: String, order: Order) = try {
-        pubSubEmailGateway.sendEmailToPubSub(EmailDto("sho@pwch.agh.edu.pl", email, "Your order ${order.id} is confirmed!", "Order ${order.id} confirmed!"))
+    fun sendOrderConfirmation(email: String, shopOrder: ShopOrder) = try {
+        pubSubEmailGateway.sendEmailToPubSub(
+            EmailDto(
+                "sho@pwch.agh.edu.pl",
+                email,
+                "Your order ${shopOrder.id} is confirmed!",
+                "Order ${shopOrder.id} confirmed!"
+            )
+        )
     } catch (e: RestClientException) {
         LOGGER.error("[Send Order Confirmation] Can't send order confirmation")
         throw e

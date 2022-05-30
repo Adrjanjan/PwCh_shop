@@ -3,4 +3,4 @@ server:
 
 spring:
   redis:
-    host: ${REDIS_ADDRESS:10.12.1.19}
+    url: :6379

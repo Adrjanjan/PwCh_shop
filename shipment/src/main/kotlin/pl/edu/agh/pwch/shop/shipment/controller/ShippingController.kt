@@ -21,7 +21,7 @@ class ShippingController {
     @Autowired
     lateinit var shippingService: ShippingService
 
-    @GetMapping("/quote")
+    @PostMapping("/quote")
     fun getQuote(@RequestBody getQuoteRequest: GetQuoteRequest): Money {
         LOGGER.info("[GetQuote] received request")
         return shippingService.createQuoteFromCount(getQuoteRequest.address, getQuoteRequest.items)
