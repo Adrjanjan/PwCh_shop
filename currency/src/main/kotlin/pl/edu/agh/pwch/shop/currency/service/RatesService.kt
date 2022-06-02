@@ -16,7 +16,7 @@ class RatesService {
     }
 
     private fun initRates() {
-        TODO("Could be initialized using Europena Central Bank API")
+        TODO("Could be initialized using European Central Bank API")
     }
 
 }

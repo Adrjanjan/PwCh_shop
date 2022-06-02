@@ -20,7 +20,7 @@ spec:
             - containerPort: 8080
           env:
             - name: REDIS_ADDRESS
-              value: "TODO"
+              value: "10.158.16.3:6379"
             - name: PORT
               value: "8080"
           resources:
