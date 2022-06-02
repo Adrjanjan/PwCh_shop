@@ -21,6 +21,18 @@ spec:
           env:
             - name: PORT
               value: "8083"
+            - name: BASKET_SERVICE_ADDR
+              value: "basket:8080"
+            - name: CURRENCY_SERVICE_ADDR
+              value: "currency:8081"
+            - name: NOTIFICATION_SERVICE_ADDR
+              value: "notification:8082"
+            - name: PAYMENT_SERVICE_ADDR
+              value: "payment:8084"
+            - name: PRODUCT_CATALOG_SERVICE_ADDR
+              value: "product-catalog:8085"
+            - name: SHIPPING_SERVICE_ADDR
+              value: "shipment:8086"
           resources:
             requests:
               cpu: 100m

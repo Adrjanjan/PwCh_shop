@@ -12,15 +12,15 @@ spring:
     hibernate:
       ddl-auto: update
 
-#basket-service-address: ${BASKET_SERVICE_ADDR:localhost}:8080
-#currency-service-address: ${CURRENCY_SERVICE_ADDR:localhost}:8081
-#notification-service-address: ${NOTIFICATION_SERVICE_ADDR:localhost}:8082
-#payment-service-address: ${PAYMENT_SERVICE_ADDR:localhost}:8084
-#product-catalog-service-address: ${PRODUCT_CATALOG_SERVICE_ADDR:localhost}:8085
-#shipping-service-address: ${SHIPPING_SERVICE_ADDR:localhost}:8086
-basket-service-address: http://localhost:8080
-currency-service-address: http://localhost:8081
-notification-service-address: http://localhost:8082
-payment-service-address: http://localhost:8084
-product-catalog-service-address: http://localhost:8085
-shipping-service-address: http://localhost:8086
+basket-service-address: ${BASKET_SERVICE_ADDR}
+currency-service-address: ${CURRENCY_SERVICE_ADDR}
+notification-service-address: ${NOTIFICATION_SERVICE_ADDR}
+payment-service-address: ${PAYMENT_SERVICE_ADDR}
+product-catalog-service-address: ${PRODUCT_CATALOG_SERVICE_ADDR}
+shipping-service-address: ${SHIPPING_SERVICE_ADDR}
+#basket-service-address: http://localhost:8080
+#currency-service-address: http://localhost:8081
+#notification-service-address: http://localhost:8082
+#payment-service-address: http://localhost:8084
+#product-catalog-service-address: http://localhost:8085
+#shipping-service-address: http://localhost:8086
