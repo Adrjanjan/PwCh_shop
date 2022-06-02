@@ -71,7 +71,7 @@ class OrderService {
             placeOrderRequest.userId,
             placeOrderRequest.address,
             orderPreparation.orderItems.map { it.basketItem })!!
-//        emptyUserBasket(placeOrderRequest.userId)
+        emptyUserBasket(placeOrderRequest.userId)
 
         val shopOrder = ShopOrder(
             UUID.randomUUID(),
@@ -85,7 +85,7 @@ class OrderService {
             total,
             shippingTrackingId
         )
-//        sendOrderConfirmation(placeOrderRequest.email, order)
+        sendOrderConfirmation(placeOrderRequest.email, shopOrder)
         orderRepository.save(shopOrder)
         return OrderResult(
             shopOrder.id,
@@ -103,8 +103,7 @@ class OrderService {
 
 
     fun prepareOrderItemsAndShippingQuoteFromBasket(userID: UUID, userCurrency: Currency, address: Address): OrderPrep {
-//        val basketItems = getUserBasket(userID)!!
-        val basketItems = listOf(ItemDto(UUID.fromString("b8c0af51-ff53-4ae8-ac88-56b371dd3754"), 2))
+        val basketItems = getUserBasket(userID)!!
         val orderItems = prepOrderItems(basketItems, userCurrency)
         val shippingUSD = quoteShipping(address, basketItems)!!
         val shippingPrice = convertCurrency(shippingUSD, userCurrency)!!

@@ -7,7 +7,8 @@ import pl.edu.agh.pwch.shop.shareddto.basket.BasketDto
 import pl.edu.agh.pwch.shop.shareddto.basket.ItemDto
 import java.util.*
 
-@RestController("/basket")
+@RestController
+@RequestMapping("/basket")
 class BasketController {
 
     @Autowired
