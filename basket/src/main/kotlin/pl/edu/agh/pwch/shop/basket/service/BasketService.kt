@@ -18,14 +18,19 @@ class BasketService {
 
     fun addItem(itemDto: AddItemRequest): Basket {
         val basket = basketRepository.findById(itemDto.userId)
+        val productId = itemDto.item.productId
         return if (basket.isPresent) {
-            basket.get().items.replace(itemDto.item.productId, itemDto.item.quantity)
+            if (basket.get().items[productId] == null) {
+                basket.get().items[productId] = itemDto.item.quantity
+            } else {
+                basket.get().items.replace(productId, itemDto.item.quantity)
+            }
             basketRepository.save(basket.get())
         } else {
             basketRepository.save(
                 Basket(
                     itemDto.userId,
-                    mutableMapOf(itemDto.item.productId to itemDto.item.quantity)
+                    mutableMapOf(productId to itemDto.item.quantity)
                 )
             )
         }

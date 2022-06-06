@@ -49,7 +49,7 @@ kind: Service
 metadata:
   name: product-catalog
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: product-catalog
   ports:

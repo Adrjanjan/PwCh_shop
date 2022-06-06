@@ -21,6 +21,8 @@ spec:
           env:
             - name: PORT
               value: "8082"
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: "/app/auth.json"
           resources:
             requests:
               cpu: 1000m

@@ -5,6 +5,8 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+kubernetes/pwch-shop-a4c490bd6950.json
+
 ### STS ###
 .apt_generated
 .classpath
