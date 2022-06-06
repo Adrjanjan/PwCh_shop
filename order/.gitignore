@@ -4,6 +4,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+kubernetes/pwch-shop-8a69e6d70dcb.json
 
 ### STS ###
 .apt_generated

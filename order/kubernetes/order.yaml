@@ -21,6 +21,8 @@ spec:
           env:
             - name: PORT
               value: "8083"
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: "/app/auth.json"
             - name: BASKET_SERVICE_ADDR
               value: "http://basket:8080"
             - name: CURRENCY_SERVICE_ADDR
